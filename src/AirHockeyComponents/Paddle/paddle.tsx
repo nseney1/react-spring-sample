@@ -5,6 +5,13 @@ const PADDLE_WIDTH = 80
 const PADDLE_HEIGHT = 80
 
 const Paddle = (props: { playerX: number, playerY: number }) => {
+  /*
+    @playerX: New X location on the Gameboard for this players paddle
+    #playerY: New Y location on the Gameboard for this players paddle
+
+    Uses playerX and playerY to animation a new location for this
+
+  */
   const [ springs, api ] = useSpring(() => ({ }))
 
   const [ currentX, setCurrentX ] = useState(props?.playerX)
@@ -21,7 +28,6 @@ const Paddle = (props: { playerX: number, playerY: number }) => {
   }, [ props.playerX ])
 
   useEffect(() => {
-    console.log(props?.playerY)
     api.start({
       from: { y: currentY },
       to: { y: props?.playerY }

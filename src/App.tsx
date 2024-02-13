@@ -5,8 +5,7 @@ import GameBoard from './AirHockeyComponents/GameBoard/gameboard';
 function App() {
 
   return (
-    <GameBoard>
-      <Paddle />
+    <GameBoard className="w-screen h-screen">
     </GameBoard>
     
   )
